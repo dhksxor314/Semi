@@ -1,0 +1,132 @@
+/*
+ * 
+ */
+ 
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)); 
+head{
+	margin-top: -200px;
+}
+body{
+	font-family:나눔고딕, NanumGothic, ng;
+	}
+
+#theCarousel{
+	margin-top: 10px;
+}
+.list {
+	border-right:none;
+	border-left:none;
+	border-top:none;
+	border-bottom:none;
+}
+.btn-primary{
+	background-color: #6DB6D4;
+}
+#list {
+	margin-left: -65px;
+}
+.cencel{
+	color :red;
+}
+#button {
+	margin-top: 40px;
+	margin-right: -10px
+}
+
+#checkbox{
+	margin-left: -15px;
+	border-right:none;
+	border-left:none;
+	border-top:none;
+	border-bottom:none;
+}
+
+<!-- 활동내역 -->
+#meet_image{
+	margin-left: -5px;
+}
+#my_image{
+	border:solid 3px #fff;
+	
+}
+#active_list{
+	margin-right: -100px
+}
+
+#sidebar {
+	margin-top: 50px;
+}
+#title{
+	text-align:left;
+	margin-bottom:5px;
+	color: #6DB6D4;
+}
+#cencle {
+	margin-bottom: -90px;
+	margin-right: -10px
+}
+#menu {
+	text-align: center;
+	width: 100px;
+	margin-left: -29px;
+	margin-bottom: 30px;
+}
+<!-- 테이블 -->
+.table {
+	margin-top: 20px;
+	text-align: center;
+}
+.table-striped thead {
+	background-color: #D7DDF4;
+	text-align: center;
+	border-color : none;
+}
+.table th {
+	background-color: #BBDDFA;
+	text-align: center;
+}
+.table td {
+	text-align: center;
+}
+.table-striped tbody {
+	background-color: #fff;
+	text-align: center;
+	border-color: none;
+    border-top-color: none;
+    border-right-color: none;
+    border-bottom-color: none;
+    border-left-color:none;
+}
+
+#btn{
+	background-color: #6DB6D4;
+}
+
+#main1{
+	margin-right: 260px;
+}
+#main2{
+	margin-right: 50px;
+}
+<!-- 장바구니 -->
+#order{
+	margin-top: -150px;
+	margin-left: 500px;
+}
+#total{
+	margin-top: 15px;
+	margin-left: 55px;
+}
+
+<!-- 정보수정 -->
+#main2{
+	margin-right: 10px;
+}
+#check {
+	margin-right: -80px;
+}
+<!-- 회원탈퇴 -->
+#complete {
+	margin-bottom: 80px;
+	margin-right: -200px;
+}
