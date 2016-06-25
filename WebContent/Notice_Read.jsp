@@ -1,3 +1,11 @@
+<!-- 
+페이지 : 공지사항 읽기 페이지
+작성자 : 전현영
+설명 : 공지사항 리스트에서 선택시에 선택된 공지사항 글을 읽는다. 관리자 신분이 아닐경우에는 수정이나 삭제가 불가능하다.
+	
+ -->
+
+
 <%@page import="dao.NoticeDao"%>
 <%@page import="dto.NoticeDto"%>
 <%@ page contentType="text/html; charset=EUC-KR"%>

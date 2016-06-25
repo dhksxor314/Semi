@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 강사 승인로 이동하는 커맨드
+ *   
+ */
+
 package model;
 
 import java.io.IOException;

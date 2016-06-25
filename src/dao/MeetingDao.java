@@ -1,3 +1,10 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 강연 및 만남에 관련된 작업을 위한 Dao
+ *  
+ * 
+ */
+
 package dao;
 
 import java.sql.Connection;

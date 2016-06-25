@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 장소에 관련된 작업을 위한 Dao
+ *   
+ */
+
 package dao;
 
 import java.sql.Connection;
@@ -23,6 +29,7 @@ public class PlaceDao {
 		}
 	}
 	
+	//장소 등록
 	public void insertPlace(PlaceDto dto){ 
 		try{		
 			con = pool.getConnection();
@@ -45,6 +52,7 @@ public class PlaceDao {
 		}
 	}
 	
+	//선택한 장소의 정보를 리턴
 	public PlaceDto getPlace(int place_num){
 		PlaceDto dto = new PlaceDto();
 		String sql = "select * from place where place_num=?";
@@ -72,6 +80,7 @@ public class PlaceDao {
 		return dto;
 	}
 	
+	//장소 수정
 	public void updatePlace(PlaceDto dto){  
 		String sql = "update place set p_name=?, address=?, "
 				+ "capacity=?, phone=? where place_num=?";
@@ -95,6 +104,7 @@ public class PlaceDao {
 		}
 	}
 	
+	//장소 삭제
 	public void deletePlace(int place_num){	
 		String sql = "delete from place where place_num=" + place_num;
 		try{
@@ -110,6 +120,8 @@ public class PlaceDao {
 		}
 	}
 	
+	
+	//장소 리스트 리턴
 	public Vector<PlaceDto> getPlaceList(String keyField, String keyWord){
 		Vector<PlaceDto> vList = new Vector<PlaceDto>();
 		String sql = null;

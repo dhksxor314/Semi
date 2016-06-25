@@ -1,3 +1,11 @@
+<!-- 
+페이지 : 해당 회원의 포인트 사용 및 적립 내역을 출력하는 페이지
+작성자 : 전현영
+설명 : 해당 회원의 포인트 사용 및 적립 내역을 출력하는 페이지
+	
+ -->
+
+
 <%@page import="dao.PointDao"%>
 <%@page import="dto.MemActivityDto"%>
 <%@page import="dto.MemberDto"%>

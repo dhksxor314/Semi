@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : a태그를 사용한 이동들을 처리하기 위해 만든 컨트롤러
+ *   
+ */
+
 package controller;
 
 import java.io.IOException;
@@ -27,6 +33,8 @@ public class MoveController extends HttpServlet {
 		resp.setCharacterEncoding("euc-kr");
 		String cmd = req.getParameter("cmd");
 		BasicBean basic = BasicBean.newInstance();
+		//multipart타입일 경우 req.getParameter("cmd")가 널이 들어오므로 multilpart타입으로 받귀 위한 부문
+
 		if(cmd==null){			
 			basic.setPath(req, "upload");
 			basic.setMax(50*1024*1024);

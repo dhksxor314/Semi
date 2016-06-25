@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 비밀번호 찾기 작업을 수행하는 Command
+ *   
+ */
+
 package model;
 
 import java.io.IOException;
@@ -28,9 +34,9 @@ public class FindPwCommand implements Command{
 		MemberDao dao = new MemberDao();
 		String id = req.getParameter("id");
 		String email = req.getParameter("email");
-
+		//아이디와 이메일을 받아와서 해당 데이터가 있으면 가져온다.
 		MemberDto dto = dao.getPw(id, email);
-		
+		//보내는 사람과 받는사람, 제목, 내용을 입력한다.
 		String from = "hyeon454";
 		String to = email;
 		String subject = "노하우 팩토리 비밀번호 찾기";

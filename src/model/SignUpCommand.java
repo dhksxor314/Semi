@@ -1,3 +1,8 @@
+/*
+ *  ÀÛ¼ºÀÚ : ÀüÇö¿µ
+ *  ¼³¸í : È¸¿ø°¡ÀÔ ÆäÀÌÁö¿¡¼­ ¹Ş¾Æ¿Â °ªµéÀ» µğºñ¿¡ ÀÔ·Â½ÃÅ°±âÀ§ÇÑ Ä¿¸Çµå
+ *   
+ */
 package model;
 
 import java.io.IOException;
@@ -11,7 +16,6 @@ import dto.MemberDto;
 import mybean.BasicBean;
 
 public class SignUpCommand implements Command{
-	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public Object processCommand(HttpServletRequest req, HttpServletResponse resp) throws SerialException, IOException {
 		
@@ -20,20 +24,22 @@ public class SignUpCommand implements Command{
 		MemberDto dto = new MemberDto();
 		MemberDao dao = new MemberDao();
 		
-		basic.setPath(req, "upload");
-		basic.setMax(50*1024*1024);
-		basic.setEncType("euc-kr");
+		//eenctype="multipart/form-data"ÀÇ µ¥ÀÌÅÍ¸¦ ¹Ş±â À§ÇÑ MultipartRequest ÆÄ¶ó¹ÌÅÍ°ªÀ»À» ÀÔ·Â
+		basic.setPath(req, "upload");//°æ·Î
+		basic.setMax(50*1024*1024);//ÆÄÀÏ Å©±â Á¦ÇÑ
+		basic.setEncType("euc-kr");//ÀÎÄÚµù Å¸ÀÔ
 		basic.setMulti(req);
 		
 		dto.setName(basic.getMulti().getParameter("name"));
 		dto.setPassword(basic.getMulti().getParameter("pass"));
 		dto.setEmail(basic.getMulti().getParameter("email1")+"@"+basic.getMulti().getParameter("email2"));
 		
-		//Sign_Upï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
+		//»ı³â¿ùÀÏ ÀÔ·ÂÇÒ ½Ã¿¡ °°ÀÌ µé¾î¿À´Â ³â, ¿ù, ÀÏÀ» Àß¶ó³»°í µğºñ¿¡ ÀÔ·ÂÇÏ±â À§ÇÑ ÀÛ¾÷À» ÇÏ´Â °úÁ¤
 		String year = basic.getMulti().getParameter("birth").split("³â")[0];
 		String month = basic.getMulti().getParameter("month").split("¿ù")[0];
 		String day = basic.getMulti().getParameter("day").split("ÀÏ")[0];
 		String birthdate = "";
+		//¿ù°ú ÀÏÀ» ´õÇßÀ» ¶§ÀÇ ±æÀÌ°¡ 4°¡ µÇÁö ¾ÊÀ»½Ã¿¡ 4ÀÚ¸®·Î ¸ÂÃß±âÀ§ÇÑ ÀÛ¾÷À» ÇÏ´Â °úÁ¤
 		if((month+day).length()<4){
 			if(month.length()<2){
 				month="0"+month;

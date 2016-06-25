@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 회원에 관련된 작업을 위한 Dao
+ *   
+ */
+
 package dao;
 
 import java.sql.Connection;

@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 강연 및 만남 DTO
+ *   
+ */
+
 package dto;
 
 import java.util.Date;

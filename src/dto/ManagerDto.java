@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 관리자 DTO
+ *   
+ */
+
 package dto;
 
 public class ManagerDto {

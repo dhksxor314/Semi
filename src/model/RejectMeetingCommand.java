@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 만남을 거부할 시 사용하는 커맨드
+ *   
+ */
+
 package model;
 
 import java.io.IOException;

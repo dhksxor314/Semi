@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 강연에 관련된 작업을 위한 Dao
+ *   
+ */
+
 package dao;
 
 import java.sql.Connection;
@@ -24,78 +30,7 @@ public class SpeechDao {
 			System.out.println("DB연결객체 생성실패 : " + err);
 		}
 	}
-	/*
-	public void insertSpeech(SpeechDto dto){ 
-		try{		
-			con = pool.getConnection();
 
-			String sql = "insert into s_place(place_num, p_name, address, phone, s_capacity) values(seq_place.nextVal, ?, ?, ?, ?)";
-			stmt = con.prepareStatement(sql);
-			
-			stmt.setString(1, dto.getP_name());
-			stmt.setString(2, dto.getAddress());
-			stmt.setString(3, dto.getPhone());
-			stmt.setInt(4, dto.getS_capacity());
-	
-			stmt.executeUpdate();
-		}
-		catch(Exception err){
-			System.out.println("장소 추가 실패 : " + err);
-		}
-		finally{
-			pool.freeConnection(con, stmt);
-		}
-	}
-	
-	public SpeechDto getSpeech(int place_num){
-		SpeechDto dto = new SpeechDto();
-		String sql = "select * from s_place where place_num=" + place_num;
-		try{
-			con = pool.getConnection();
-
-			stmt = con.prepareStatement(sql);
-			rs = stmt.executeQuery();
-			
-			if(rs.next()){
-				dto.setPlace_num(rs.getInt("place_num"));
-				dto.setP_name(rs.getString("p_name"));
-				dto.setS_capacity(rs.getInt("s_capacity"));
-				dto.setPhone(rs.getString("phone"));
-				dto.setAddress(rs.getString("address"));
-			}
-		}
-		catch(Exception err){
-			System.out.println("getPlace : " + err);
-		}
-		finally{
-			pool.freeConnection(con, stmt, rs);
-		}
-		return dto;
-	}
-	
-	public void updateSpeech(SpeechDto dto){  
-		String sql = "update speech set p_name=?, address=?, "
-				+ "s_capacity=?, phone=? where place_num=?";
-		try{
-			con = pool.getConnection();
-			stmt = con.prepareStatement(sql);
-			
-			stmt.setString(1, dto.getP_name());
-			stmt.setString(2, dto.getAddress());
-			stmt.setInt(3, dto.getS_capacity());
-			stmt.setString(4, dto.getPhone());
-			stmt.setInt(5, dto.getPlace_num());
-			
-			stmt.executeUpdate();
-		}
-		catch(Exception err){
-			System.out.println("updatePlace : " + err);
-		}
-		finally{
-			pool.freeConnection(con, stmt);
-		}
-	}
-	*/
 	public void deleteSpeech(int speech_num){	
 		String sql = "delete from where speech_num=" + speech_num;
 		try{

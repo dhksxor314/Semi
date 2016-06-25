@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 공지사항 업데이트를 수행하는 커맨드
+ *   
+ */
+
 package model;
 
 import java.io.IOException;

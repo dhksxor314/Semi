@@ -1,3 +1,10 @@
+/*
+ *  작성자 : 강연자
+ *  설명 : 장소 DTO
+ *   
+ */
+
+
 package dto;
 
 public class SpeakerDto {

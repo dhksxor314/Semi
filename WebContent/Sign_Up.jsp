@@ -1,4 +1,11 @@
-<!-- 회원가입폼 페이지 -->
+<!-- 
+페이지 : 회원가입 페이지
+작성자 : 전현영
+설명 : JQUERY를 이용하여 입력할 수 있는 제약조건들과 조건에 맞은 데이터를 입력했을 때 올바른 데이터인지 알 수 있도록
+		도움말을 작성하였다.
+	
+ -->
+
 <%@page import="java.util.Vector"%>
 <%@page import="dto.MemberDto"%>
 <%@page import="dao.MemberDao"%>

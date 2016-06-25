@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 만남을 승인 및 거부하기 위한 페이지로 이동하는 Command
+ *   
+ */
+
 package model;
 
 import java.io.IOException;

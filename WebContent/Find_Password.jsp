@@ -1,3 +1,10 @@
+<!-- 
+페이지 : 비밀번호 찾기
+작성자 : 전현영
+설명 : ID와 이메일을 입력하여 아이디를 찾는다.
+	
+ -->
+
 <%@ page contentType="text/html; charset=EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>

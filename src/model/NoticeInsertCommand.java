@@ -1,8 +1,13 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 공지사항 등록
+ *   
+ */
+
 package model;
 
 import java.io.IOException;
 
-import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -23,7 +28,7 @@ public class NoticeInsertCommand implements Command{
 		
 		HttpSession session = req.getSession();
 		
-		//dto.setNotice_num((Integer)session.getAttribute("managerNum"));
+		dto.setNotice_num((Integer)session.getAttribute("managerNum"));
 		dto.setTitle(req.getParameter("title"));
 		dto.setContent(req.getParameter("content"));
 		

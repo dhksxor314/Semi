@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 로그인 작업을 수행하는 커맨드
+ *   
+ */
+
 package model;
 
 import java.io.IOException;
@@ -21,7 +27,7 @@ public class LoginCommand implements Command{
       
       String id = req.getParameter("id");
       String pass = req.getParameter("pass");
-      String option = req.getParameter("option");
+      String option = req.getParameter("option");//일반회원, 강연자, 관리자를 분류
       
       String url="main.jsp";
 

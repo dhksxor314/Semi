@@ -1,3 +1,10 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 아이디 찾기 작업을 수행하는 Command
+ *   
+ */
+
+
 package model;
 
 import java.io.IOException;
@@ -28,11 +35,12 @@ public class FindIdCommand implements Command{
 		req.setCharacterEncoding("utf-8");
 
 		MemberDao dao = new MemberDao();
+		//이름과 이메일을 받아와서 해당 데이터가 있으면 가져온다.
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
 		
 		MemberDto dto = dao.getId(name, email);
-		
+		//보내는 사람과 받는사람, 제목, 내용을 입력한다.
 		String from = "hyeon454";
 		String to = email;
 		String subject = "노하우 팩토리 아이디 찾기";
@@ -72,10 +80,12 @@ public class FindIdCommand implements Command{
 			} catch(Exception e){
 			    System.out.println("전송 실패");
 			}
+			//성공했을 시에 view에서 alert를 사용하여 사용자에게 메일이 발송된 것을 알려준다 
 			req.setAttribute("foundId", "메일로 ID가 발송되었습니다.");
 			
 		}
 		else{
+			//실패했을 시에 view에서 alert를 사용하여 사용자에게 일치하는 정보가 없다고 알려준다
 			req.setAttribute("foundId", "일치하는 정보가 없습니다");
 		}
 		

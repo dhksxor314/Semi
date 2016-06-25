@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 공지사항 DTO
+ *   
+ */
+
 package dto;
 
 public class NoticeDto {

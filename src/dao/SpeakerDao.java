@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 강연자에 관련된 작업을 위한 Dao
+ *   
+ */
+
 package dao;
 
 import java.sql.Connection;
@@ -27,7 +33,7 @@ public class SpeakerDao {
       }
    }
    
-   
+   //강연자로 로그인
    public SpeakerDto loginSpeaker(String id, String pw){
       SpeakerDto dto = new SpeakerDto();
 
@@ -54,10 +60,10 @@ public class SpeakerDao {
       return dto;
    }
    
-   
+   //강연자 승인
    public void GrantSpeaker(int speaker_num){
       
-      String sql = "update speaker set approval='승인됨' where speaker_num=?";
+      String sql = "update speaker set approval='y' where speaker_num=?";
       
       try{
          con = pool.getConnection();
@@ -75,6 +81,7 @@ public class SpeakerDao {
       
    }
    
+   //선택한 강연자의 정보 리턴
    public SpeakerDto getSpeaker(int speaker_num){
       
       SpeakerDto dto = new SpeakerDto();
@@ -109,11 +116,11 @@ public class SpeakerDao {
       return dto;
    }
    
-   
+   //강연자 요청 리스트 리턴
    public Vector<SpeakerDto> getSpeakerGrantList(){
       
       Vector<SpeakerDto> vList = new Vector<>();
-      String sql = "select * from speaker where approval='승인안됨' order by speaker_num desc";
+      String sql = "select * from speaker where approval='n' order by speaker_num desc";
       
       try{
          con = pool.getConnection();
@@ -138,6 +145,7 @@ public class SpeakerDao {
       }
       return vList;
    }
+   
    
    public Vector<SpeakerDto> getSpeakerList(String keyField, String keyWord){
       Vector<SpeakerDto> vList = new Vector<>();

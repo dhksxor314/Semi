@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 장소등록 시에 사용되는 커맨드
+ *   
+ */
+
 package model;
 
 import java.io.IOException;

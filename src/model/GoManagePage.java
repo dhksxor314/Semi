@@ -1,3 +1,8 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 관리자 페이지로 이동하는 커맨드
+ *   
+ */
 package model;
 
 import java.io.IOException;

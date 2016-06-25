@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 장소 DTO
+ *   
+ */
+
 package dto;
 
 public class Place_Dto {

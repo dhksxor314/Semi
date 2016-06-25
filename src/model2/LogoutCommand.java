@@ -1,3 +1,10 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 로그아웃 커맨드
+ *  	  메인페이지로 돌아갔을 때 url이 처음에 main.jsp로 들어왔을 때랑 다르므로 사용하지 않고 있다.
+ *   
+ */
+
 package model2;
 
 import java.io.IOException;

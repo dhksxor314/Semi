@@ -1,3 +1,11 @@
+<!-- 
+	페이지 : 아이디 중복검사 페이지
+	작성자 : 전현영
+	설명 : 회원가입 페이지에서 입력한 아이디를 중복검사할 때 사용한다.
+		  해당 아이디가 사용가능한지 불가능한지 메시지를 출력한다.
+ -->
+
+
 <%@page import="dao.MemberDao"%>
 <%@ page contentType="text/html; charset=EUC-KR" %>
 <%@ page contentType="text/html; charset=EUC-KR" %>
@@ -23,9 +31,9 @@
 	request.setCharacterEncoding("euc-kr");
 	String id = request.getParameter("id");
 	MemberDao dao = new MemberDao();
-
+	//입력된 아이디가 사용가능 한지 true or false로 받는다. true가 사용가능
 	boolean check = dao.confirmId(id);
-	
+	//opener를 사용하여 회원가입 페이지의 duplicate 값을 설정 1이면 중복검사가 완료된것
 	if(check){ 
 %>		
 		<br/>

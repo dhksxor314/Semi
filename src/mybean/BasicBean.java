@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 수업시간에 했던 것을 필요한 부분과 필요없는 부분들을 정리하여 만든 클래스
+ *   
+ */
+
 package mybean;
 
 import java.io.File;
@@ -17,6 +23,7 @@ public class BasicBean {
 	String enctype;
 	MultipartRequest multi;
 	
+	//이 클래스를 두번 생성할 시에 에러가 생기므로 싱글턴 패턴으로 생성
 	private static BasicBean instance = new BasicBean();
 	public static BasicBean newInstance(){
 		return instance;
@@ -45,10 +52,12 @@ public class BasicBean {
 			e.printStackTrace();
 		}
 	}
+	//설정한 multipartrequest를 받아오기 위해 getMulti()를 생성
 	public MultipartRequest getMulti(){
 		return multi;
 	}
 	
+	//사진을 저장하기 위해서 이름만을 사용하므로 이름만 리턴 할 수 있도록 수정
 	public String getUpFileInfo(){
 		Enumeration enumer = multi.getFileNames();
 		String result="";

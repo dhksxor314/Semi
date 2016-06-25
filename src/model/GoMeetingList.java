@@ -1,3 +1,9 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 만남 리스트로 이동하는 Command
+ *   
+ */
+
 package model;
 
 import java.io.IOException;

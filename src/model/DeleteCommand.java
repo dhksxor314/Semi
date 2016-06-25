@@ -1,3 +1,10 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 장소와 회원, 공지사항 및 강연, 만남을 삭제 할 시 사용되는 Command
+ *   
+ */
+
+
 package model;
 
 import java.io.IOException;
@@ -50,6 +57,7 @@ public class DeleteCommand implements Command{
             notice.deleteNotice(Integer.parseInt(chk[i]));
          }
       }
+      //만남 및 강연을 삭제
       else if(classify.equals("meeting") || classify.equals("speech")){
          
          String s_m="";
