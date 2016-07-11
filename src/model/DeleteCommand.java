@@ -1,0 +1,88 @@
+/*
+ *  작성자 : 전현영
+ *  설명 : 장소와 회원, 공지사항 및 강연, 만남 등의 삭제 할 시 사용되는 Command
+ *   
+ */
+
+
+package model;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.MeetingDao;
+import dao.MemberDao;
+import dao.NoticeDao;
+import dao.PlaceDao;
+import dao.SpeakerDao;
+
+public class DeleteCommand implements Command{
+
+	   @Override
+	   public Object processCommand(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	      
+	      req.setCharacterEncoding("euc-kr");
+	      String classify = req.getParameter("classify");
+	      String[] chk = req.getParameterValues("check");
+	      String url = "";
+	      
+	      PlaceDao place = new PlaceDao();
+	      MemberDao member = new MemberDao();
+	      NoticeDao notice = new NoticeDao();
+	      MeetingDao meeting = new MeetingDao();
+	      SpeakerDao speaker = new SpeakerDao();
+	      
+	      //장소를 삭제
+	      if(classify.equals("place")){
+	         url="/WEB-INF/manage/Place_List.jsp";
+
+	         for(int i=0;i<chk.length;i++){
+	            place.deletePlace(Integer.parseInt(chk[i]));
+	         }
+	      }
+	      //회원을 삭제
+	      else if(classify.equals("member")){
+	         url="/WEB-INF/Member_List.jsp";
+	         
+	         for(int i=0;i<chk.length;i++){
+	            member.deleteMember(Integer.parseInt(chk[i]));
+	         }
+	      }
+	      //공지사항을 삭제
+	      else if(classify.equals("notice")){
+	         url="Notice.jsp";
+	         
+	         for(int i=0;i<chk.length;i++){
+	            notice.deleteNotice(Integer.parseInt(chk[i]));
+	         }
+	      }
+	      //만남 및 강연을 삭제
+	      else if(classify.equals("meeting") || classify.equals("speech")){
+	         
+	         String s_m="";
+	         if(classify.equals("meeting")){
+
+	            url="/WEB-INF/manage/Meeting_List.jsp";
+	            s_m="m";
+	         }
+	         else{
+	            url="/WEB-INF/manage/Speech_List.jsp";
+	            s_m="s";
+	         }
+	         
+	         for(int i=0;i<chk.length;i++){
+	            meeting.deleteMeeting(Integer.parseInt(chk[i]), s_m);
+	         }
+	      }
+	      else if(classify.equals("speaker")){
+	    	  url="/WEB-INF/manage/Speaker_List.jsp";
+	    	  for(int i=0;i<chk.length;i++){
+	              speaker.deleteSpeaker(Integer.parseInt(chk[i]));
+	           }
+	      }
+	      
+	      return url;
+	   }
+	}
